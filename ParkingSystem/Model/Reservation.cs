@@ -8,7 +8,7 @@ namespace ParkingSystem.Model
     public class Reservation
     {
         private int id;
-        private int parkingSpot;
+        private int parkingSpotId;
         private int driverId;
         private String vehicleId;
         private DateTime reservedOn;
@@ -20,13 +20,13 @@ namespace ParkingSystem.Model
             set { id = value; }
         }
 
-        public int ParkingSpot
+        public int ParkingSpotId
         {
-            get { return parkingSpot; }
-            set { parkingSpot = value; }
+            get { return parkingSpotId; }
+            set { parkingSpotId = value; }
         }
 
-        public int DriverID
+        public int DriverId
         {
             get { return driverId; }
             set { driverId = value; }
@@ -49,25 +49,25 @@ namespace ParkingSystem.Model
             set { reservedUntil = value; }
         }
 
-        public Reservation(int id, int parkingSpot, int driverId, String vehicleId, DateTime reservedOn,
+        public Reservation(int id, int parkingSpotId, int driverId, String vehicleId, DateTime reservedOn,
             DateTime reservedUntil)
         {
             this.id = id;
-            this.parkingSpot = parkingSpot;
+            this.parkingSpotId = parkingSpotId;
             this.driverId = driverId;
             this.vehicleId = vehicleId;
-            this.reservedOn = reservedOn;
-            this.reservedUntil = reservedUntil;
+            this.reservedOn = reservedOn.Date;
+            this.reservedUntil = reservedUntil.Date;
         }
 
-        public Reservation(int parkingSpot, int driverId, String vehicleId, DateTime reservedOn,
+        public Reservation(int parkingSpotId, int driverId, String vehicleId, DateTime reservedOn,
             DateTime reservedUntil)
         {
-            this.parkingSpot = parkingSpot;
+            this.parkingSpotId = parkingSpotId;
             this.driverId = driverId;
             this.vehicleId = vehicleId;
-            this.reservedOn = reservedOn;
-            this.reservedUntil = reservedUntil;
+            this.reservedOn = reservedOn.Date;
+            this.reservedUntil = reservedUntil.Date;
         }
 
         public override bool Equals(object obj)
@@ -80,7 +80,7 @@ namespace ParkingSystem.Model
 
         public override string ToString()
         {
-            return id + "," + parkingSpot + "," + driverId + "," + vehicleId + "," + reservedOn.ToShortDateString() +
+            return id + "," + parkingSpotId + "," + driverId + "," + vehicleId + "," + reservedOn.ToShortDateString() +
                    "," + reservedUntil.ToShortDateString();
         }
     }

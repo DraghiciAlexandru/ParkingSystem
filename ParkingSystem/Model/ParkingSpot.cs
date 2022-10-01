@@ -8,7 +8,7 @@ namespace ParkingSystem.Model
     {
         private int id;
         private int levelId;
-        private SpotType typeId;
+        private int typeId;
 
         public int Id
         {
@@ -21,20 +21,20 @@ namespace ParkingSystem.Model
             set { levelId = value; }
         }
 
-        public SpotType TypeId
+        public int TypeId
         {
             get { return typeId; }
             set { typeId = value; }
         }
 
-        public ParkingSpot(int id, int levelId, SpotType typeId)
+        public ParkingSpot(int id, int levelId, int typeId)
         {
             this.id = id;
             this.levelId = levelId;
             this.typeId = typeId;
         }
 
-        public ParkingSpot(int levelId, SpotType typeId)
+        public ParkingSpot(int levelId, int typeId)
         {
             this.levelId = levelId;
             this.typeId = typeId;
@@ -43,14 +43,14 @@ namespace ParkingSystem.Model
         public override bool Equals(object obj)
         {
             ParkingSpot parkingSpot = obj as ParkingSpot;
-            if (this.id == parkingSpot.id)
+            if ((this.id == parkingSpot.id)) 
                 return true;
             return false;
         }
 
         public override string ToString()
         {
-            return id + "," + levelId + "," + typeId.Id;
+            return id + "," + levelId + "," + typeId;
         }
     }
 }

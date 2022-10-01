@@ -22,11 +22,9 @@ namespace ParkingSystem
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ());*/
 
-            VehicleRepo vehicleRepo = new VehicleRepo();
-            foreach (Vehicle vehicle in vehicleRepo.getAll())
-            {
-                Debug.WriteLine(vehicle.ToString());
-            }
+
+
+
         }
     }
 }

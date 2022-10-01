@@ -7,6 +7,7 @@ namespace ParkingSystem.Model
     public class Vehicle
     {
         private String numberPlate;
+        private int driverId;
         private String brand;
         private String model;
         private String color;
@@ -15,6 +16,12 @@ namespace ParkingSystem.Model
         {
             get { return numberPlate; }
             set { numberPlate = value; }
+        }
+
+        public int DriverId
+        {
+            get { return driverId; }
+            set { driverId = value; }
         }
         public String Brand
         {
@@ -32,16 +39,18 @@ namespace ParkingSystem.Model
             set { color = value; }
         }
 
-        public Vehicle(String numberPlate, String brand, String model, String color)
+        public Vehicle(String numberPlate, int driverId, String brand, String model, String color)
         {
             this.numberPlate = numberPlate;
+            this.driverId = driverId;
             this.brand = brand;
             this.model = model;
             this.color = color;
         }
 
-        public Vehicle(String brand, String model, String color)
+        public Vehicle(int driverId, String brand, String model, String color)
         {
+            this.driverId = driverId;
             this.brand = brand;
             this.model = model;
             this.color = color;
@@ -57,7 +66,7 @@ namespace ParkingSystem.Model
 
         public override string ToString()
         {
-            return numberPlate + "," + brand + "," + model + "," + color;
+            return numberPlate + "," + driverId + "," + brand + "," + model + "," + color;
         }
     }
 }
