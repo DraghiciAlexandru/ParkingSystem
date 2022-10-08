@@ -54,11 +54,11 @@ namespace ParkingSystem.Repo
             return db.LoadData<Reservation, dynamic>(sql, new {id}, connectionString)[0];
         }
 
-        public List<Reservation> getByParkingId(int parkingId)
+        public List<Reservation> getByParkingId(int parkingSpotId)
         {
-            string sql = "select * from reservation where parkingId = @parkingId";
+            string sql = "select * from reservation where parkingSpotId = @parkingSpotId";
 
-            return db.LoadData<Reservation, dynamic>(sql, new {parkingId}, connectionString);
+            return db.LoadData<Reservation, dynamic>(sql, new {parkingSpotId}, connectionString);
         }
 
         public List<Reservation> getByDriverId(int driverId)
